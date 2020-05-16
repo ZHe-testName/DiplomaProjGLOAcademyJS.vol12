@@ -28,6 +28,10 @@ const headerActons = () => {
            
         }
 
+        if(target.id === 'main'){
+            mainMenu.classList.remove('header-menu-descktop-show');
+        }
+
         if(target.classList.contains('menu__icon')){
             mainMenu.classList.add('header-menu-descktop-show');
 
@@ -72,6 +76,16 @@ const headerActons = () => {
             
         document.querySelector(`.${link}`).scrollIntoView({block: 'start', behavior: 'smooth'});
     });
+
+    for(let i = 0; i < main.childNodes.length; i++){
+        if(main.childNodes[i].nodeName.toLowerCase() === 'header' || 
+        main.childNodes[i].nodeName.toLowerCase() === 'div'){
+            main.childNodes[i].addEventListener('click', () => {
+                mainMenu.classList.remove('header-menu-descktop-show');
+            });
+        }
+    }
+    
 };
 
 export default headerActons;
