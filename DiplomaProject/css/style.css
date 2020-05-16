@@ -6528,7 +6528,7 @@ strong {
   }
 
   .rotate-formula-card-par{
-    /* -webkit-transform: rotate(-180deg); 
+    -webkit-transform: rotate(-180deg); 
     -ms-transform: rotate(-180deg);
     transform: rotate(-180deg);
     -webkit-transition-property: all; 
@@ -6536,6 +6536,6 @@ strong {
     transition-property: all;
     -webkit-transition-duration: 1s;
     -ms-transition-duration: 1s; 
-    transition-duration: 1s; */
-    writing-mode: horizontal-tb;
+    transition-duration: 1s;
+    z-index: 90;
     }
