@@ -15,7 +15,7 @@ const repairPopUpActions = () => {
     repiarTipesWindow.addEventListener('click', (event) => {
         let target = event.target;
 
-        if(target.classList.contains('mobile-hide')){
+        if(target.classList.contains('mobile-hide') || target.classList.contains('popup-repair-types')){
             repiarTipesWindow.style.visibility = 'hidden';
         }
     });

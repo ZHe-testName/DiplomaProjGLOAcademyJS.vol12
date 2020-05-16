@@ -9,6 +9,8 @@ class Sender{
         this.form.addEventListener('submit', (event) => {
             event.preventDefault();
 
+            let privacyWindow = document.querySelector('.popup-privacy');
+
             this.body = {};
 
             this.formInputs = this.form.querySelectorAll('input');
@@ -24,6 +26,8 @@ class Sender{
             if(!window.fetch){
                 if(this.check){
                     this.ieFormSender(this.body);
+                }else{
+                    privacyWindow.style.visibility = 'visible';
                 }
             }else{
                 if(this.check){
@@ -47,6 +51,8 @@ class Sender{
                     .finally(
                         this.clearInputs()
                     );
+                }else{
+                    privacyWindow.style.visibility = 'visible';
                 }
     
             }
@@ -69,6 +75,7 @@ class Sender{
         });
 
         this.form.addEventListener('click', (event) => {
+            let privacyWindow = document.querySelector('.popup-privacy');
             let target = event.target;
 
             if(target.getAttribute('type') === 'checkbox' && (!target.hasAttribute('checked'))){
@@ -80,18 +87,16 @@ class Sender{
             }
 
             if(target.classList.contains('link-privacy')){
-                let privacyWindow = document.querySelector('.popup-privacy');
-
                 privacyWindow.style.visibility = 'visible';
-
-                privacyWindow.addEventListener('click', (event) => {
-                    let target = event.target;
-
-                    if(target.classList.contains('mobile-hide')){
-                        privacyWindow.style.visibility = 'hidden';
-                    }
-                });
             }
+
+            privacyWindow.addEventListener('click', (event) => {
+                let target = event.target;
+
+                if(target.classList.contains('mobile-hide') || target.classList.contains('popup-privacy')){
+                    privacyWindow.style.visibility = 'hidden';
+                }
+            });
         });
 
         this.postData = (body) => {

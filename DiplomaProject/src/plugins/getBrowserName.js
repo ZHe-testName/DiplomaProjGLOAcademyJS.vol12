@@ -7,5 +7,3 @@ const compareBrowserName = (nameStr) => {
     if(browserDescription.search(/Opera/) > 0) 'opera' === nameStr.toLowerCase() ? true : false; 
     if(browserDescription.search(/MSIE/) > 0) "ie" === nameStr.toLowerCase() ? true : false; 
 };
-
-export default compareBrowserName;
