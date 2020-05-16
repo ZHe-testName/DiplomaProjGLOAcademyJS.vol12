@@ -940,8 +940,20 @@ template, [hidden] {
       line-height: 25px;
       font-size: 19px;
       text-align: left;
-      -webkit-transform: translate3d(0, -5px, 0);
-      transform: translate3d(0, -5px, 0);
+      /* -webkit-transform: translate3d(0, -5px, 0);
+      transform: translate3d(0, -5px, 0); */
+      -webkit-transform: rotate(0deg); 
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition-property: all; 
+      -ms-transition-property: all;  
+      transition-property: all;
+      -webkit-transition-duration: .3s;
+      -ms-transition-duration: .3s; 
+      transition-duration: .3s;
+      -webkit-transform-origin: 50% 140%; 
+      -ms-transform-origin: 50% 140%;  
+      transform-origin: 50% 140%; 
       opacity: 0.1; }
       .formula-item-popup p {
         padding-bottom: 15px; }
@@ -6502,3 +6514,28 @@ strong {
   visibility: visible;
   opacity: 1;
 }
+
+.rotate-formula-card{
+  -webkit-transform: rotate(-180deg); 
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-transition-property: all; 
+  -ms-transition-property: all;  
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -ms-transition-duration: 1s; 
+  transition-duration: 1s;
+  }
+
+  .rotate-formula-card-par{
+    /* -webkit-transform: rotate(-180deg); 
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    -webkit-transition-property: all; 
+    -ms-transition-property: all;  
+    transition-property: all;
+    -webkit-transition-duration: 1s;
+    -ms-transition-duration: 1s; 
+    transition-duration: 1s; */
+    writing-mode: horizontal-tb;
+    }
