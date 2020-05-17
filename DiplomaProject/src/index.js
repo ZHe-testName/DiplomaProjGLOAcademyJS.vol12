@@ -21,8 +21,13 @@ feedBackFormObj.letsGoForm.init();
 feedBackFormObj.actionForm.init();
 feedBackFormObj.repairCostForm.init();
 feedBackFormObj.askQuestionForm.init();
+feedBackFormObj.consultationForm.init();
 
 //Formula block actions
 import formulaBlockActions from './modules/formula';
 formulaBlockActions();
+
+//Consultation popup window show function
+import consultationPopUp from './modules/popUpConsultation'
+consultationPopUp();
 

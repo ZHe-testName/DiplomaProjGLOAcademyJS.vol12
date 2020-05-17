@@ -10,4 +10,6 @@ const repairCostForm = new Sender('#feedback4');
 
 const askQuestionForm = new Sender('#feedback5');
 
-export  {headerForm, letsGoForm, actionForm, repairCostForm, askQuestionForm};
+const consultationForm = new Sender('#feedback6');
+
+export  {headerForm, letsGoForm, actionForm, repairCostForm, askQuestionForm, consultationForm};
