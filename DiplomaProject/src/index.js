@@ -27,6 +27,10 @@ feedBackFormObj.consultationForm.init();
 import formulaBlockActions from './modules/formula';
 formulaBlockActions();
 
+//Accordion actions function
+import accordionSwitch from './modules/accordion';
+accordionSwitch();
+
 //Consultation popup window show function
 import consultationPopUp from './modules/popUpConsultation'
 consultationPopUp();

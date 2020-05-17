@@ -6527,14 +6527,14 @@ strong {
   transition-duration: 1s;
   }
 
-  .rotate-formula-card-par{
-    -webkit-transform: rotate(-180deg); 
-    -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    -webkit-transition-property: all; 
-    -ms-transition-property: all;  
-    transition-property: all;
-    -webkit-transition-duration: 1s;
-    -ms-transition-duration: 1s; 
-    transition-duration: 1s;
-    }
+.rotate-formula-card-par{
+  -webkit-transform: rotate(-180deg); 
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-transition-property: all; 
+  -ms-transition-property: all;  
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -ms-transition-duration: 1s; 
+  transition-duration: 1s;
+  }
