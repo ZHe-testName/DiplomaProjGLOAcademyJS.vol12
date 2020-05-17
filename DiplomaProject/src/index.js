@@ -5,7 +5,6 @@
 import 'nodelist-foreach-polyfill';
 
 
-
 //All header manipulations functional
 import headerActons from './modules/header';
 headerActons();
