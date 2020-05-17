@@ -1,7 +1,9 @@
 const formulaBlockActions = () => {
     const dtFormulaField = document.querySelector('.tablet-hide'),
+        mobFormulaField = document.querySelector('.desktop-hide'),
         formulaItems = dtFormulaField.querySelectorAll('.formula-item__icon-inner-text'),
-        formulaItemCards = dtFormulaField.querySelectorAll('.formula-item-popup');
+        formulaItemCards = dtFormulaField.querySelectorAll('.formula-item-popup'),
+        mobileFormulaItems = mobFormulaField.querySelectorAll('.formula-item-popup');
         
     formulaItems.forEach((item) => {
         item.addEventListener('mouseenter', (event) => {
@@ -17,7 +19,7 @@ const formulaBlockActions = () => {
                         card.classList.add('rotate-formula-card');;
                         card.style.visibility = 'visible';
                         card.style.opacity = '1';
-                        card.style.zIndex = '90';
+                        card.style.zIndex = '9999';
                     }
                     
                 }

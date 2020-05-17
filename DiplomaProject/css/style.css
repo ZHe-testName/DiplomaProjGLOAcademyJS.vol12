@@ -766,7 +766,7 @@ template, [hidden] {
         display: none; } }
   .formula-slider {
     min-height: 400px;
-    margin-top: 102px; }
+    margin-top: 102px;}
     @media (max-width: 575px) {
       .formula-slider {
         min-height: 265px;
@@ -6537,5 +6537,4 @@ strong {
     -webkit-transition-duration: 1s;
     -ms-transition-duration: 1s; 
     transition-duration: 1s;
-    z-index: 90;
     }
