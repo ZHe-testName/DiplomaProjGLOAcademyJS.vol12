@@ -18,15 +18,23 @@ class RepairSlider extends Slider{
         current.textContent = `${this.option.position + 1}`;
         total.textContent = `${this.slides.length}`
     }
+
 };
 
-const repairTypesSlider = new RepairSlider({
+const repairTypesSlider1 = new RepairSlider({
     main: '.repair-types-slider-wrap',
     wrap: '.types-repair1',
     nextArrow: '.slider-arrow_right',
     prevArrow: '.slider-arrow_left'
 });
 
-repairTypesSlider.countShow();
+const repairTypesSlider2 = new RepairSlider({
+    main: '.repair-types-slider-wrap',
+    wrap: '.types-repair2',
+    nextArrow: '.slider-arrow_right',
+    prevArrow: '.slider-arrow_left'
+});
 
-export default repairTypesSlider;
+
+
+export {repairTypesSlider1, repairTypesSlider2};

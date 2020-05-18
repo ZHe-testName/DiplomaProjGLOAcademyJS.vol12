@@ -27,8 +27,11 @@ import formulaBlockActions from './modules/formula';
 formulaBlockActions();
 
 //Repair types block slider
-import repairTypesSlider from './modules/repairTypesSlider';
-repairTypesSlider.init();
+
+
+//Repair types block tabs
+import repairTabs from './modules/repairTabs';
+repairTabs();
 
 //Accordion actions function
 import accordionSwitch from './modules/accordion';
