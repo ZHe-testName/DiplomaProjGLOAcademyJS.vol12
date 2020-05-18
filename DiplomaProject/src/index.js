@@ -26,6 +26,10 @@ feedBackFormObj.consultationForm.init();
 import formulaBlockActions from './modules/formula';
 formulaBlockActions();
 
+//Repair types block slider
+import repairTypesSlider from './modules/repairTypesSlider';
+repairTypesSlider.init();
+
 //Accordion actions function
 import accordionSwitch from './modules/accordion';
 accordionSwitch();
