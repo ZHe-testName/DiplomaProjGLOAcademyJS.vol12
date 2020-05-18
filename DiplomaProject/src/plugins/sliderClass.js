@@ -65,25 +65,38 @@ class Slider{
     }
 
     nextSlide(){
-        if(this.option.position <= this.slides.length - this.slidesToShow){
-            ++this.option.position;
-        }
-        
-        if(this.option.position > this.slides.length - this.slidesToShow && this.option.infinity){
-            this.option.position = 0;
-        }
+        if(this.option.infinity){
+            if(this.option.position <= this.slides.length - this.slidesToShow){
+                ++this.option.position;
+            }
 
+            if(this.option.position > this.slides.length - this.slidesToShow){
+                this.option.position = 0;
+            }
+        }else{
+            if(this.option.position < this.slides.length - this.slidesToShow){
+                ++this.option.position;
+            }
+        }
+       
         this.wrap.style.transform = `translateX(-${this.option.position * this.option.slideWidth}%)`;
     }
 
     prevSlide(){
-        if(this.option.position >= 0){
-            --this.option.position;
+        if(this.option.infinity){
+            if(this.option.position >= 0){
+                --this.option.position;
+            }
+    
+            if(this.option.position < 0 && this.option.infinity){
+                this.option.position = this.slides.length - this.slidesToShow ;
+            }
+        }else{
+            if(this.option.position > 0){
+                --this.option.position;
+            }
         }
-
-        if(this.option.position < 0 && this.option.infinity){
-            this.option.position = this.slides.length - this.slidesToShow ;
-        }
+        
 
         this.wrap.style.transform = `translateX(-${this.option.position * this.option.slideWidth}%)`;
     }
