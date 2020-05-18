@@ -27,16 +27,41 @@ const repairTypesSlider1 = new RepairSlider({
     main: '.repair-types-slider-wrap',
     wrap: '.types-repair1',
     nextArrow: '.slider-arrow_right',
-    prevArrow: '.slider-arrow_left'
+    prevArrow: '.slider-arrow_left',
+    id: 'ssRepairBlock'
 });
 
 const repairTypesSlider2 = new RepairSlider({
     main: '.repair-types-slider-wrap',
     wrap: '.types-repair2',
     nextArrow: '.slider-arrow_right',
-    prevArrow: '.slider-arrow_left'
+    prevArrow: '.slider-arrow_left',
+    id: 'ssRepairBlock'
+});
+
+const repairTypesSlider3 = new RepairSlider({
+    main: '.repair-types-slider-wrap',
+    wrap: '.types-repair3',
+    nextArrow: '.slider-arrow_right',
+    prevArrow: '.slider-arrow_left',
+    id: 'ssRepairBlock'
+});
+
+const repairTypesSlider4 = new RepairSlider({
+    main: '.repair-types-slider-wrap',
+    wrap: '.types-repair4',
+    nextArrow: '.slider-arrow_right',
+    prevArrow: '.slider-arrow_left',
+    id: 'ssRepairBlock'
+});
+
+const repairTypesSlider5 = new RepairSlider({
+    main: '.repair-types-slider-wrap',
+    wrap: '.types-repair5',
+    nextArrow: '.slider-arrow_right',
+    prevArrow: '.slider-arrow_left',
+    id: 'ssRepairBlock'
 });
 
 
-
-export {repairTypesSlider1, repairTypesSlider2};
+export {repairTypesSlider1, repairTypesSlider2, repairTypesSlider3, repairTypesSlider4, repairTypesSlider5};

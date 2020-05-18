@@ -1,7 +1,8 @@
 class Slider{
     constructor({
         main,
-        wrap, 
+        wrap,
+        id, 
         position = 0,
         nextArrow,
         prevArrow,
@@ -11,6 +12,7 @@ class Slider{
     }){
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
+        this.id = id;
         this.slides = document.querySelector(wrap).children;
         this.nextArrow = this.main.querySelector(nextArrow);
         this.prevArrow = this.main.querySelector(prevArrow);
@@ -43,7 +45,7 @@ class Slider{
     incertStyle(){
         const style = document.createElement('style');
 
-        style.id = 'repairSlideOne';
+        style.id = this.id;
         style.type = 'text/css';
         style.textContent = `
             .zhe-slider-wrap-style{
