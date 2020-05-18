@@ -6,7 +6,8 @@ class Slider{
         nextArrow,
         prevArrow,
         slidesToShow = 1,
-        infinity = false
+        infinity = false,
+        slideCounter,
     }){
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
@@ -14,6 +15,7 @@ class Slider{
         this.nextArrow = this.main.querySelector(nextArrow);
         this.prevArrow = this.main.querySelector(prevArrow);
         this.slidesToShow = slidesToShow;
+        this.slideCounter = slideCounter;
         this.option = {
             infinity,
             position,
