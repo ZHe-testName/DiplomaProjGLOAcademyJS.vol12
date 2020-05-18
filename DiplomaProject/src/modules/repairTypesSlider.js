@@ -21,6 +21,8 @@ class RepairSlider extends Slider{
 
 };
 
+
+
 const repairTypesSlider1 = new RepairSlider({
     main: '.repair-types-slider-wrap',
     wrap: '.types-repair1',

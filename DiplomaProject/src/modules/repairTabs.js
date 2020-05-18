@@ -14,11 +14,11 @@ const repairTabs = () => {
         if(target.tagName.toLowerCase() === 'button'){
             let buttonNum = target.classList[2].substr(-1);
 
-            for(let child of repairButtonsField.children){
-                if(child.className.indexOf(buttonNum) > 0){
-                    child.classList.add('active');
+            for(let i = 0; i < repairButtonsField.children.length; i++){
+                if(repairButtonsField.children[i].className.indexOf(buttonNum) > 0){
+                    repairButtonsField.children[i].classList.add('active');
                 }else{
-                    child.classList.remove('active');
+                    repairButtonsField.children[i].classList.remove('active');
                 }
             }
             

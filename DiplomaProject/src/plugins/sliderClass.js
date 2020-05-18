@@ -35,8 +35,8 @@ class Slider{
         this.main.classList.add('zhe-slider-style');
         this.wrap.classList.add('zhe-slider-wrap-style');
 
-        for(let slide of this.slides){
-            slide.classList.add('zhe-slider-slide-style')
+        for(let i = 0; i < this.slides.length; i++){
+            this.slides[i].classList.add('zhe-slider-slide-style');
         }
     }
 
