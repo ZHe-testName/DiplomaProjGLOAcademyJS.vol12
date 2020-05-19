@@ -2,22 +2,22 @@ class Slider{
     constructor({
         main,
         wrap,
-        id, 
         position = 0,
         nextArrow,
         prevArrow,
         slidesToShow = 1,
         infinity = false,
         slideCounter,
+        transDir = 'X',
     }){
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
-        this.id = id;
         this.slides = document.querySelector(wrap).children;
         this.nextArrow = this.main.querySelector(nextArrow);
         this.prevArrow = this.main.querySelector(prevArrow);
         this.slidesToShow = slidesToShow;
         this.slideCounter = slideCounter;
+        this.transDir = transDir;
         this.option = {
             infinity,
             position,
@@ -29,7 +29,6 @@ class Slider{
 
     init(){
         this.zheStyles();
-        this.incertStyle();
         this.controlSlider();
     }
 
@@ -40,27 +39,6 @@ class Slider{
         for(let i = 0; i < this.slides.length; i++){
             this.slides[i].classList.add('zhe-slider-slide-style');
         }
-    }
-
-    incertStyle(){
-        const style = document.createElement('style');
-
-        style.id = this.id;
-        style.type = 'text/css';
-        style.textContent = `
-            .zhe-slider-wrap-style{
-                display: flex;
-                transition: transform .5s;
-                will-change: transform;
-            }
-
-            .zhe-slider-slide-style{
-                flex: 0 0 ${this.option.slideWidth}%;
-                margin: auto 0;
-            }
-        `;
-
-        document.head.appendChild(style);
     }
 
     controlSlider(){
@@ -83,7 +61,7 @@ class Slider{
             }
         }
        
-        this.wrap.style.transform = `translateX(-${this.option.position * this.option.slideWidth}%)`;
+        this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
     }
 
     prevSlide(){
@@ -102,8 +80,9 @@ class Slider{
         }
         
 
-        this.wrap.style.transform = `translateX(-${this.option.position * this.option.slideWidth}%)`;
+        this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
     }
+
 };
 
 export default Slider;

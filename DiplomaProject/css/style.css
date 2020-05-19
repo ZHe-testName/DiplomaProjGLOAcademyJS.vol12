@@ -1677,7 +1677,8 @@ div.wave-block:nth-child(17):after {
     align-items: flex-start; }
     @media (max-width: 1090px) {
       .transparency-slider.row {
-        display: block; } }
+        display: flex;
+        flex-wrap: nowrap; } }
     .transparency-slider-wrap {
       margin-top: 150px; }
       @media (max-width: 1024px) {

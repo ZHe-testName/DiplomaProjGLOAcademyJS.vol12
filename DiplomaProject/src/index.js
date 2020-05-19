@@ -33,6 +33,10 @@ formulaBlockActions();
 import repairTabs from './modules/repairTabs';
 repairTabs();
 
+//Documents block
+import documentSlider from './modules/documentsBlock';
+documentSlider();
+
 //Accordion actions function
 import accordionSwitch from './modules/accordion';
 accordionSwitch();
