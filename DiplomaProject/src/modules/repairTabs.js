@@ -19,6 +19,8 @@ const repairTabs = () => {
             .zhe-slider-slide-style{
                 flex: 0 0 100%;
                 margin: auto 0;
+                transition: transform .5s;
+                will-change: transform;
             }
         `;
 
