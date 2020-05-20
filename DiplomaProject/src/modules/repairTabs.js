@@ -36,10 +36,12 @@ const repairTabs = () => {
        }));
 
        slidersArr[i].init();
+       slidersArr[i].turnOffControls();
     }
 
     
     slidersArr[0].countShow();
+    slidersArr[0].turnOnControls();
 
     repairButtonsField.addEventListener('click', (event) => {
         let target = event.target;
@@ -50,47 +52,21 @@ const repairTabs = () => {
             for(let i = 0; i < repairButtonsField.children.length; i++){
                 if(repairButtonsField.children[i].className.indexOf(buttonNum) > 0){
 
-                    slidersCollection.children[i].style.display = 'flex';
+                    slidersCollection.children[i].style.display = 'flex';   
 
-                    for(let j = 0; j < slidersArr.length; j++){
-                        if(j === i){
-                            console.log(j, i);
-                            slidersArr[j].nextArrow = '.slider-arrow_right';
-                            slidersArr[j].prevArrow = '.slider-arrow_left';
-                            slidersArr[j].countShow();
+                    slidersArr.forEach((slider, index) => {
+                        if(index === i){
+                            slider.turnOnControls();
+                            slider.countShow();
                         }else{
-                            delete slidersArr[j].nextArrow;
-                            delete slidersArr[j].prevArrow;
+                            slider.turnOffControls();
                         }
-                    }
-
-                    // switch(buttonNum){
-                    //     case '1':
-
-                    //         break;
-                    //     case '2':
-                    //         delete slidersArr[2].nextArrow;
-                    //         delete slidersArr[2].prevArrow;
-                    //         console.log('slidersArr: ', slidersArr[2]);
-                    //         break;
-                    //     case '3':
-                           
-                    //         break;
-                    //     case '4':
-                           
-                    //         break;
-                    //     case '5':
-                         
-                    //         break;
-                    //     default:
-                    //         console.error('switch case problem');
-                    // }
+                    })
 
                     repairButtonsField.children[i].classList.add('active');
                 }else{
                     repairButtonsField.children[i].classList.remove('active');
-
-                    slidersCollection.children[i].classList.remove('zhe-slider-wrap-style');
+                    
                     slidersCollection.children[i].style.display = 'none';
                 }
             }

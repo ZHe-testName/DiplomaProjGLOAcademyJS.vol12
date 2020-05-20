@@ -10,6 +10,7 @@ class Slider{
         slideCounter,
         transDir = 'X',
         slideTranslate = false,
+        controlsOn = true,
     }){
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
@@ -20,6 +21,7 @@ class Slider{
         this.slideCounter = slideCounter;
         this.transDir = transDir;
         this.slideTranslate = slideTranslate;
+        this.controlsOn = controlsOn;
         this.option = {
             infinity,
             position,
@@ -48,50 +50,63 @@ class Slider{
         this.prevArrow.addEventListener('click', this.prevSlide.bind(this));
     }
 
-    nextSlide(){
-        if(this.option.infinity){
-            if(this.option.position <= this.slides.length - this.slidesToShow){
-                ++this.option.position;
-            }
+    turnOffControls(){
+        this.controlsOn = false;
+    }
 
-            if(this.option.position > this.slides.length - this.slidesToShow){
-                this.option.position = 0;
+    turnOnControls(){
+        this.controlsOn = true;
+    }
+
+    nextSlide(){
+        if(this.controlsOn){
+            if(this.option.infinity){
+                if(this.option.position <= this.slides.length - this.slidesToShow){
+                    ++this.option.position;
+                }
+    
+                if(this.option.position > this.slides.length - this.slidesToShow){
+                    this.option.position = 0;
+                }
+            }else{
+                if(this.option.position < this.slides.length - this.slidesToShow){
+                    ++this.option.position;
+                }
             }
-        }else{
-            if(this.option.position < this.slides.length - this.slidesToShow){
-                ++this.option.position;
+            
+            if(this.slideTranslate){
+                for(let i = 0; i < this.slides.length; i++){
+                    this.slides[i].style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+                }
+            }else{
+                this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
             }
-        }
-        if(this.slideTranslate){
-            for(let i = 0; i < this.slides.length; i++){
-                this.slides[i].style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
-            }
-        }else{
-            this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
         }
     }
 
     prevSlide(){
-        if(this.option.infinity){
-            if(this.option.position >= 0){
-                --this.option.position;
-            }
-    
-            if(this.option.position < 0 && this.option.infinity){
-                this.option.position = this.slides.length - this.slidesToShow ;
-            }
-        }else{
-            if(this.option.position > 0){
-                --this.option.position;
-            }
-        }
+        if(this.controlsOn){
+            if(this.option.infinity){
+                if(this.option.position >= 0){
+                    --this.option.position;
+                }
         
-        if(this.slideTranslate){
-            for(let i = 0; i < this.slides.length; i++){
-                this.slides[i].style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+                if(this.option.position < 0 && this.option.infinity){
+                    this.option.position = this.slides.length - this.slidesToShow ;
+                }
+            }else{
+                if(this.option.position > 0){
+                    --this.option.position;
+                }
             }
-        }else{
-            this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+            
+            if(this.slideTranslate){
+                for(let i = 0; i < this.slides.length; i++){
+                    this.slides[i].style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+                }
+            }else{
+                this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+            }
         }
     }
 

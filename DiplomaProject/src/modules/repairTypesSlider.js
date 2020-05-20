@@ -3,12 +3,18 @@ import Slider from '../plugins/sliderClass';
 class RepairSlider extends Slider{
     nextSlide(){
         super.nextSlide();
-        this.countShow();
+
+        if(this.controlsOn){
+            this.countShow();
+        }
     }
 
     prevSlide(){
         super.prevSlide();
-        this.countShow();
+
+        if(this.controlsOn){
+            this.countShow();
+        }
     }
 
     countShow(){
