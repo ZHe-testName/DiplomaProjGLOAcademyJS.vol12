@@ -45,3 +45,7 @@ accordionSwitch();
 import consultationPopUp from './modules/popUpConsultation'
 consultationPopUp();
 
+//Popup window of the documents block
+import popUpDocsWindow from './modules/documentsPopUpSlider';
+popUpDocsWindow();
+

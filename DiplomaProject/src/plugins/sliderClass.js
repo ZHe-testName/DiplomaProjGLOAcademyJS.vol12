@@ -9,6 +9,7 @@ class Slider{
         infinity = false,
         slideCounter,
         transDir = 'X',
+        slideTranslate = false,
     }){
         this.main = document.querySelector(main);
         this.wrap = document.querySelector(wrap);
@@ -18,6 +19,7 @@ class Slider{
         this.slidesToShow = slidesToShow;
         this.slideCounter = slideCounter;
         this.transDir = transDir;
+        this.slideTranslate = slideTranslate;
         this.option = {
             infinity,
             position,
@@ -60,8 +62,13 @@ class Slider{
                 ++this.option.position;
             }
         }
-       
-        this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+        if(this.slideTranslate){
+            for(let i = 0; i < this.slides.length; i++){
+                this.slides[i].style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+            }
+        }else{
+            this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+        }
     }
 
     prevSlide(){
@@ -79,8 +86,13 @@ class Slider{
             }
         }
         
-
-        this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+        if(this.slideTranslate){
+            for(let i = 0; i < this.slides.length; i++){
+                this.slides[i].style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+            }
+        }else{
+            this.wrap.style.transform = `translate${this.transDir}(-${this.option.position * this.option.slideWidth}%)`;
+        }
     }
 
 };
