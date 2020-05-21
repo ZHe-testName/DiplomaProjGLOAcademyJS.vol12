@@ -33,6 +33,10 @@ formulaBlockActions();
 import repairTabs from './modules/repairTabs';
 repairTabs();
 
+//Portfolio slider insertion
+import portfolioSlider from './modules/portfolioSlider';
+portfolioSlider();
+
 //Priblems block motion insertion
 import problemsMotion from './modules/problems';
 problemsMotion();

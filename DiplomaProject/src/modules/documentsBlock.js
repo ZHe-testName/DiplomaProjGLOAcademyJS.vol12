@@ -6,32 +6,6 @@ const documentSlider = () => {
     nextSlide = document.querySelector('#transparency_right'),
     prevSlide = document.querySelector('#transparency_left');
 
-    const  incertStyle = (idStr) => {
-        const style = document.createElement('style');
-
-        style.id = idStr;
-        style.type = 'text/css';
-        style.textContent = `
-            .zhe-slider-style{
-                margin: auto;
-            }
-            .zhe-slider-wrap-style{
-                display: flex;
-                transition: transform .5s;
-                will-change: transform;
-            }
-
-            .zhe-slider-slide-style{
-                flex: 0 0 100%;
-                margin: auto;
-                transition: transform .5s;
-                will-change: transform;
-            }
-        `;
-
-        document.head.appendChild(style);
-    };
-
     docsSlider.addEventListener('click', (event) => {
         let target = event.target;
 
@@ -72,7 +46,25 @@ const documentSlider = () => {
 
         docBlockSlider.init();
 
-        incertStyle('repair-custom-documents-style__zhe');
+        docBlockSlider.zheStyles('zhe-docs-slider-style', 'zhe-docs-wrap-style', 'zhe-docs-slider-slide-style');
+        docBlockSlider.incertStyle('repair-custom-documents-style__zhe', `
+                 .zhe-docs-slider-style{
+                     margin: auto;
+                 }
+                 .zhe-docs-wrap-style{
+                     display: flex;
+                     transition: transform .5s;
+                     will-change: transform;
+                 }
+    
+                 .zhe-docs-slider-slide-style{
+                     flex: 0 0 100%;
+                     margin: auto;
+                     transition: transform .5s;
+                     will-change: transform;
+                 }
+             `);
+        
     }
     
 };

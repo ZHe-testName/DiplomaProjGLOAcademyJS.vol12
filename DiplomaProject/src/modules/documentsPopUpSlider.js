@@ -10,6 +10,7 @@ const popUpDocsWindow = () => {
     });
     
     docBlockPopUpSlider.init();
+    docBlockPopUpSlider.zheStyles('zhe-docs-slider-style', 'zhe-docs-wrap-style', 'zhe-docs-slider-slide-style');
     docBlockPopUpSlider.countShow();
 };
 

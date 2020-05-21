@@ -4,29 +4,6 @@ const repairTabs = () => {
     const repairButtonsField = document.querySelector('.nav-list-repair'),
         slidersCollection = document.querySelector('.repair-types-slider');
 
-    const  incertStyle = (idStr) => {
-        const style = document.createElement('style');
-
-        style.id = idStr;
-        style.type = 'text/css';
-        style.textContent = `
-            .zhe-slider-wrap-style{
-                display: flex;
-                transition: transform .5s;
-                will-change: transform;
-            }
-
-            .zhe-slider-slide-style{
-                flex: 0 0 100%;
-                margin: auto 0;
-                transition: transform .5s;
-                will-change: transform;
-            }
-        `;
-
-        document.head.appendChild(style);
-    };
-
     let slidersArr = [];
 
     for(let i = 0; i < slidersCollection.children.length; i++){
@@ -38,6 +15,7 @@ const repairTabs = () => {
        }));
 
        slidersArr[i].init();
+       slidersArr[i].zheStyles('zhe-docs-slider-style', 'zhe-docs-wrap-style', 'zhe-docs-slider-slide-style');
        slidersArr[i].turnOffControls();
     }
 
@@ -75,8 +53,6 @@ const repairTabs = () => {
             
         }
     });
-
-    incertStyle('repair-custom-slider-style__zhe');
 };
 
 export default repairTabs;

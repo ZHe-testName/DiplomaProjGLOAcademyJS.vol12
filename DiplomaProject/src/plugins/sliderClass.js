@@ -32,18 +32,27 @@ class Slider{
     }
 
     init(){
-        this.zheStyles();
         this.controlSlider();
     }
 
-    zheStyles(){
-        this.main.classList.add('zhe-slider-style');
-        this.wrap.classList.add('zhe-slider-wrap-style');
+    zheStyles(mainClass, wrapClass, slidesClass){
+        this.main.classList.add(mainClass);
+        this.wrap.classList.add(wrapClass);
 
         for(let i = 0; i < this.slides.length; i++){
-            this.slides[i].classList.add('zhe-slider-slide-style');
+            this.slides[i].classList.add(slidesClass);
         }
     }
+
+    incertStyle(idStr, cssStyles){
+        const style = document.createElement('style');
+
+        style.id = idStr;
+        style.type = 'text/css';
+        style.textContent = cssStyles;
+
+        document.head.appendChild(style);
+    };
 
     controlSlider(){
         this.nextArrow.addEventListener('click', this.nextSlide.bind(this));
@@ -113,3 +122,20 @@ class Slider{
 };
 
 export default Slider;
+
+//zheStyles() вызвать сразу после инициализации для привязки стилей
+//Пирмер
+
+// .zhe-slider-wrap-style{
+//     display: flex;
+//     transition: transform .5s;
+//     will-change: transform;
+// }
+
+// .zhe-slider-slide-style{
+//     flex: 0 0 100%;
+//     margin: auto 0;
+//     transition: transform .5s;
+//     will-change: transform;
+// }
+// `;
