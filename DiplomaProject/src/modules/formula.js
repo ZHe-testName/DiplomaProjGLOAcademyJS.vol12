@@ -1,5 +1,6 @@
 const formulaBlockActions = () => {
-    const dtFormulaField = document.querySelector('.tablet-hide'),
+    const formula = document.querySelector('#formula'),
+        dtFormulaField = formula.querySelector('.tablet-hide'),
         formulaItems = dtFormulaField.querySelectorAll('.formula-item__icon-inner-text'),
         formulaItemCards = dtFormulaField.querySelectorAll('.formula-item-popup');
 
