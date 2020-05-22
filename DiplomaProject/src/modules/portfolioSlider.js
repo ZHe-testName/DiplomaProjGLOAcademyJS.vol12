@@ -5,7 +5,12 @@ const portfolioSlider = () => {
         portfolioSlider = portfolio.querySelector('.portfolio-slider-wrap'),
         portfolioTabs = portfolio.querySelectorAll('.portfolio-slider__slide'),
         portfolioLeftArrow = portfolio.querySelector('#portfolio-arrow_left'),
-        portfolioRightArrow = portfolio.querySelector('#portfolio-arrow_right');
+        portfolioRightArrow = portfolio.querySelector('#portfolio-arrow_right'),
+        portfolioFrames = portfolioSlider.children[portfolioSlider.children.length - 1].querySelectorAll('.portfolio-slider__slide-frame'),
+
+        portfolioPopUp = document.querySelector('.popup-portfolio'),
+        portfolioPopUpSlider = portfolioPopUp.querySelector('.popup-portfolio-slider'),
+        popUpTexts = portfolioPopUp.querySelectorAll('.popup-portfolio-text');
 
     const mainSlider = new Slider({
         main: '.portfolio-slider-wrap',
@@ -56,6 +61,31 @@ portfolioSlider.addEventListener('click', (event) => {
         if(zeroPoint === '(0%)'){
             portfolioLeftArrow.removeAttribute('style');
         };
+    }
+
+    if(target.classList.contains('portfolio-slider__slide-frame')){
+
+        portfolioFrames.forEach((item, ind) => {
+            
+            if(item === target){
+                portfolioPopUpSlider.style.transform = `translateY(-${10 * ind}%)`;
+                popUpTexts[ind].style.display = 'block';
+            }
+        });
+        
+        portfolioPopUp.style.visibility = 'visible';
+    }
+    });
+
+portfolioPopUp.addEventListener('click', (event) => {
+    let target = event.target;
+
+    if(target.classList.contains('popup-portfolio') || target.classList.contains('mobile-hide') ){
+        popUpTexts.forEach(item => {
+            item.removeAttribute('style');
+        });
+
+        portfolioPopUp.style.visibility = 'hidden';
     }
 });
 
