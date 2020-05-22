@@ -1,4 +1,5 @@
 import Slider from '../plugins/sliderClass';
+import RepairSlider from './repairTypesSlider';
 
 const portfolioSlider = () => {
     const portfolio = document.getElementById('portfolio'),
@@ -10,7 +11,9 @@ const portfolioSlider = () => {
 
         portfolioPopUp = document.querySelector('.popup-portfolio'),
         portfolioPopUpSlider = portfolioPopUp.querySelector('.popup-portfolio-slider'),
-        popUpTexts = portfolioPopUp.querySelectorAll('.popup-portfolio-text');
+        popUpTexts = portfolioPopUp.querySelectorAll('.popup-portfolio-text'),
+        prevArrow = portfolioPopUp.querySelector('#popup_portfolio_left'),
+        nextArrow = portfolioPopUp.querySelector('#popup_portfolio_right');
 
     const mainSlider = new Slider({
         main: '.portfolio-slider-wrap',
@@ -40,6 +43,34 @@ const portfolioSlider = () => {
     }
 `);
 
+const popUpSlider = new RepairSlider({
+    main: '.popup-portfolio-slider-wrap',
+    wrap: '.popup-portfolio-slider',
+    nextArrow: '#popup_portfolio_right',
+    prevArrow: '#popup_portfolio_left',
+    slideTranslate: true
+});
+
+popUpSlider.init();
+popUpSlider.zheStyles('zhe-docs-slider-style', 'zhe-docs-wrap-style', 'zhe-docs-slider-slide-style');
+popUpSlider.incertStyle('repair-custom-documents-popoup-style__zhe', `
+.zhe-docs-slider-style{
+    margin: auto;
+}
+.zhe-docs-wrap-style{
+    display: flex;
+    transition: transform .5s;
+    will-change: transform;
+}
+
+.zhe-docs-slider-slide-style{
+    flex: 0 0 100%;
+    margin: auto;
+    transition: transform .5s;
+    will-change: transform;
+}
+`);
+
 portfolioSlider.addEventListener('click', (event) => {
     let target = event.target;
     let clientX;
@@ -64,16 +95,36 @@ portfolioSlider.addEventListener('click', (event) => {
     }
 
     if(target.classList.contains('portfolio-slider__slide-frame')){
+        if(portfolioPopUp.scrollWidth > 1007){
+            portfolioPopUpSlider.classList.remove('zhe-docs-wrap-style');
 
-        portfolioFrames.forEach((item, ind) => {
+            portfolioFrames.forEach((item, ind) => {
             
-            if(item === target){
-                portfolioPopUpSlider.style.transform = `translateY(-${10 * ind}%)`;
-                popUpTexts[ind].style.display = 'block';
+                if(item === target){
+                    portfolioPopUpSlider.style.transform = `translateY(-${10 * ind}%)`;
+                    popUpTexts[ind].style.display = 'block';
+                }
+            });
+            
+            portfolioPopUp.style.visibility = 'visible';
+        }else{
+            portfolioPopUpSlider.removeAttribute('style');
+            portfolioPopUpSlider.classList.add('zhe-docs-wrap-style');
+
+            for(let i = 0; i < portfolioFrames.length; i++){
+                if(portfolioFrames[i] === target){
+                    for(let j = 0; j < i; j++){
+                        let click = new Event('click');
+                        nextArrow.dispatchEvent(click);
+                    }
+                }
             }
-        });
+            popUpSlider.countShow();
+
+            portfolioPopUp.style.visibility = 'visible';
+
+        }  
         
-        portfolioPopUp.style.visibility = 'visible';
     }
     });
 
