@@ -53,6 +53,10 @@ reviewSlider();
 import accordionSwitch from './modules/accordion';
 accordionSwitch();
 
+//Partners block functional insertion
+import partnersSlider from './modules/pertners';
+partnersSlider();
+
 //Consultation popup window show function
 import consultationPopUp from './modules/popUpConsultation'
 consultationPopUp();

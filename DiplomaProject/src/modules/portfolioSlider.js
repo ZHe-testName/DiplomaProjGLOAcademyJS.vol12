@@ -48,7 +48,7 @@ const popUpSlider = new RepairSlider({
     wrap: '.popup-portfolio-slider',
     nextArrow: '#popup_portfolio_right',
     prevArrow: '#popup_portfolio_left',
-    slideTranslate: true
+    slideTranslate: true,
 });
 
 popUpSlider.init();
