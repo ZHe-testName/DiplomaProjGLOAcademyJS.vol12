@@ -45,6 +45,10 @@ problemsMotion();
 import documentSlider from './modules/documentsBlock';
 documentSlider();
 
+//Reviews block insertion
+import reviewSlider from './modules/reviews';
+reviewSlider();
+
 //Accordion actions function
 import accordionSwitch from './modules/accordion';
 accordionSwitch();
