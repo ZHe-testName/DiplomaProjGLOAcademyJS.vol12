@@ -38,6 +38,10 @@ portfolioSlider();
 import problemsMotion from './modules/problems';
 problemsMotion();
 
+//Disign block insrtion
+import designBlock from './modules/designs';
+designBlock();
+
 //Documents block
 import documentSlider from './modules/documentsBlock';
 documentSlider();

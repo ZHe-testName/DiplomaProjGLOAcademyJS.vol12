@@ -1,5 +1,3 @@
-import Slider from '../plugins/sliderClass';
-
 const schemeBlock = () => {
     const scheme = document.getElementById('scheme'),
         navTabs = scheme.querySelector('.nav-wrap'),
