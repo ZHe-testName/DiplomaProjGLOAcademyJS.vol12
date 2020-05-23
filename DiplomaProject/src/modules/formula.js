@@ -19,7 +19,7 @@ const formulaBlockActions = () => {
                     }
 
                     formulaItemCards[index].firstChild.classList.add('rotate-formula-card-par');
-                    formulaItemCards[index].classList.add('rotate-formula-card');;
+                    formulaItemCards[index].classList.add('rotate-formula-card');
                     formulaItemCards[index].style.visibility = 'visible';
                     formulaItemCards[index].style.opacity = '1';
                 }
@@ -28,9 +28,7 @@ const formulaBlockActions = () => {
 
         );
         
-        item.addEventListener('mouseleave', (event) => {
-            let target = event.target;
-    
+        item.addEventListener('mouseleave', () => {
             formulaItemCards[index].style.visibility = 'hidden';
             formulaItemCards[index].style.opacity = '0';
             formulaItemCards[index].classList.remove('rotate-formula-card');
