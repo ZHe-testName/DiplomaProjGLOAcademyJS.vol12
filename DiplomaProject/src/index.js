@@ -26,9 +26,6 @@ feedBackFormObj.consultationForm.init();
 import formulaBlockActions from './modules/formula';
 formulaBlockActions();
 
-//Repair types block slider
-
-
 //Repair types block tabs
 import repairTabs from './modules/repairTabs';
 repairTabs();
@@ -48,6 +45,10 @@ documentSlider();
 //Reviews block insertion
 import reviewSlider from './modules/reviews';
 reviewSlider();
+
+//Scheme block insertion
+import schemeBlock from './modules/scheme';
+schemeBlock();
 
 //Accordion actions function
 import accordionSwitch from './modules/accordion';

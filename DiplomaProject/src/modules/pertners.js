@@ -1,9 +1,6 @@
 import Slider from '../plugins/sliderClass';
 
 const partnersSlider = () => {
-    const partners = document.querySelector('#partners'),
-        sliderWrap = document.querySelector('.wrapper');
-console.log(sliderWrap);
     const pertnerSlider = new Slider({
         main: '#slider-wrap',
         wrap: '.partners-slider',
