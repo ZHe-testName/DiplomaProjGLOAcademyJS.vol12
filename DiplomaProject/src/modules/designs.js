@@ -3,7 +3,9 @@ import Slider from '../plugins/sliderClass';
 const designBlock = () => {
     const designs = document.getElementById('designs'),
         nav = designs.querySelector('.nav-wrap'),
-        tabsCollection = designs.querySelectorAll('button');
+        tabsCollection = designs.querySelectorAll('button'),
+        prevBlocks = designs.querySelectorAll('.preview-block'),
+        designSlider = designs.querySelector('.designs-slider');
 
     nav.addEventListener('click', (event) => {
         let target = event.target;
@@ -12,19 +14,18 @@ const designBlock = () => {
             tabsCollection.forEach((tab, index) => {
                 if(tab === target){
                     tab.classList.add('active');
+            
+                    for(let i = 0; i < designSlider.children.length; i++){
+                         if(index === i){
+                            designSlider.children[i].removeAttribute('style');
 
-                    // slideCollection.forEach(slide => {
-                    //     slide.style.transform = `translateY(-${100 * index}%)`;
-                    // });
+                            prevBlocks[i].classList.add('visible');
+                        }else{
+                            designSlider.children[i].style.display = 'none';
 
-                    // descriptionCollection.forEach((item, i) => {
-                    //     if(i === index){
-                    //         item.classList.add('visible-content-block');
-                    //     }else{
-                    //         item.classList.remove('visible-content-block');
-                    //     }
-                        
-                    // })
+                            prevBlocks[i].classList.remove('visible');
+                        }
+                    }
                 }else{
                     tab.classList.remove('active');
                 }
