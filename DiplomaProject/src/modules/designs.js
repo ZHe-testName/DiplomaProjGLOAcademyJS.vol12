@@ -10,25 +10,26 @@ const designBlock = () => {
         navTabs = nav.querySelector('.nav-designs');
 
     let step = 0;
-
     let slidersArr = [];
 
-    for(let i = 0; i < designSlider.children.length; i++){
-        slidersArr.push(new RepairSlider({
-            main: '.designs-slider-wrap',
-            wrap: `.designs-slider__style${i + 1}`,
-            nextArrow: '#design_right',
-            prevArrow: '#design_left',
-            coef: 1.8,
-       }));
-
-       slidersArr[i].init();
-       slidersArr[i].zheStyles('zhe-docs-slider-style', 'zhe-docs-wrap-style', 'zhe-docs-slider-slide-style');
-       slidersArr[i].turnOffControls();
+    if(nav.scrollWidth < 987){
+        for(let i = 0; i < designSlider.children.length; i++){
+            slidersArr.push(new RepairSlider({
+                main: '.designs-slider-wrap',
+                wrap: `.designs-slider__style${i + 1}`,
+                nextArrow: '#design_right',
+                prevArrow: '#design_left',
+                coef: 1.8,
+           }));
+    
+           slidersArr[i].init();
+           slidersArr[i].zheStyles('zhe-docs-slider-style', 'zhe-docs-wrap-style', 'zhe-docs-slider-slide-style');
+           slidersArr[i].turnOffControls();
+        }
+    
+        slidersArr[0].countShow();
+        slidersArr[0].turnOnControls();
     }
-
-    slidersArr[0].countShow();
-    slidersArr[0].turnOnControls();
 
     const scrollFunc = (elem, ind) => {
         for(let i = 0; i < designSlider.children.length; i++){
