@@ -844,6 +844,9 @@ template, [hidden] {
           height: 84px;
           margin-left: -42px;
           margin-top: -42px; } }
+  .formula-item:hover{
+    opacity: 1;
+  }
   .formula-item {
     position: relative;
     display: -webkit-box;

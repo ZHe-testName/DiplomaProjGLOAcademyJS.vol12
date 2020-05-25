@@ -62,6 +62,10 @@ accordionSwitch();
 import partnersSlider from './modules/pertners';
 partnersSlider();
 
+//include formula modile version functional
+import formulaMobSlider from './modules/formulaMob';
+formulaMobSlider();
+
 //Consultation popup window show function
 import consultationPopUp from './modules/popUpConsultation'
 consultationPopUp();
