@@ -963,7 +963,7 @@ template, [hidden] {
       @media (max-width: 1024px) {
         .formula-item-popup {
           padding-top: 35px;
-          top: 155px; } }
+          top: 115px; } }
       @media (max-width: 575px) {
         .formula-item-popup {
           bottom: auto;
@@ -2012,6 +2012,7 @@ div.wave-block:nth-child(17):after {
           transition: 0.4s; }
   .problems-item {
     position: relative;
+    top: 3%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

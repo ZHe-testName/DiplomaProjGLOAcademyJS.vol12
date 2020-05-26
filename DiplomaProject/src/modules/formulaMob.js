@@ -27,13 +27,17 @@ const formulaMobSlider = () => {
     `);
 
     mobFormulaItems.forEach((item, ind) => {
-        item.addEventListener('mouseenter', () => {
-            mobFormulaItemCards[ind].style.visibility = 'visible';
-            mobFormulaItemCards[ind].style.opacity = '1';
-        });
-
-        item.addEventListener('mouseleave', () => {
-            mobFormulaItemCards[ind].removeAttribute('style');
+        item.addEventListener('click', () => {
+            mobFormulaItemCards.forEach((card, i) => {
+                if(i === ind){
+                    card.style.visibility = 'visible';
+                    card.style.opacity = '1';
+                    mobFormulaItems[ind].style.opacity = '1';
+                }else{
+                    card.removeAttribute('style');
+                    mobFormulaItems[ind].removeAttribute('style');
+                }
+            })
         });
     });
 };

@@ -46,6 +46,10 @@ designBlock();
 import documentSlider from './modules/documentsBlock';
 documentSlider();
 
+//Problems slider, mobile version
+import mobProblemSlider from './modules/problemsMob';
+mobProblemSlider();
+
 //Reviews block insertion
 import reviewSlider from './modules/reviews';
 reviewSlider();
