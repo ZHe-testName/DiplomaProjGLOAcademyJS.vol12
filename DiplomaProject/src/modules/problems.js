@@ -4,7 +4,6 @@ const problemsMotion = () => {
          problemsPopUps = problems.querySelectorAll('.problems-item-popup'),
          problemsItems = problems.querySelectorAll('.problems-item__icon');
 
-         console.log(problems.scrollWidth);
     if(problems.scrollWidth >= 1013){
         problemsItems.forEach((item, i) => {
             item.addEventListener('mouseenter', (event) => {
