@@ -16,7 +16,6 @@ const portfolioSlider = () => {
         nextArrow = portfolioPopUp.querySelector('#popup_portfolio_right');
 
     if(portfolio.scrollWidth > 558){
-        console.log(portfolio.scrollWidth);
         const mainSlider = new Slider({
             main: '.portfolio-slider-wrap',
             wrap: '.portfolio-slider-block-wrap',

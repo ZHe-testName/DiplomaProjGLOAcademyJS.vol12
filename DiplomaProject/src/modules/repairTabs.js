@@ -2,9 +2,14 @@ import RepairSlider from './repairTypesSlider';
 
 const repairTabs = () => {
     const repairButtonsField = document.querySelector('.nav-list-repair'),
-        slidersCollection = document.querySelector('.repair-types-slider');
+        slidersCollection = document.querySelector('.repair-types-slider'),
+        navWrapRepair = document.querySelector('.nav-wrap-repair'),
+        navWrap = document.querySelector('.repair-types-nav'),
+        navListRepair = navWrap.querySelector('.nav-list-repair');
+
 
     let slidersArr = [];
+    let step = 0;
 
     for(let i = 0; i < slidersCollection.children.length; i++){
         slidersArr.push(new RepairSlider({
@@ -53,6 +58,24 @@ const repairTabs = () => {
             
         }
     });
+
+    navWrapRepair.addEventListener('click', (event) => {
+        let target = event.target;
+
+        if(target.classList.contains('nav-arrow_right') || target.tagName.toLowerCase() === 'svg'){
+            if((navListRepair.getBoundingClientRect().right - navWrap.getBoundingClientRect().right) > 0){
+                navListRepair.style.transform = `translateX(-${step += 130}px)`;
+            }
+        }
+    
+        if(target.classList.contains('nav-arrow_left') || target.tagName.toLowerCase() === 'svg'){
+            if(step > 0){
+                navListRepair.style.transform = `translateX(-${step -= 130}px)`;
+            }
+        }
+
+    })
+
 };
 
 export default repairTabs;
