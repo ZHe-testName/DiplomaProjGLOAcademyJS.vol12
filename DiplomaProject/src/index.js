@@ -78,3 +78,4 @@ consultationPopUp();
 import popUpDocsWindow from './modules/documentsPopUpSlider';
 popUpDocsWindow();
 
+
