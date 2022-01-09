@@ -75,8 +75,8 @@ const portfolioSlider = () => {
     portfolioSlider.addEventListener('click', (event) => {
         let target = event.target;
         let clientX;
-
-        if(target.classList.contains('slider-arrow_right-portfolio')){
+        
+        if(target.classList.contains('slider-arrow_right-portfolio') || target.classList.length === 0){
             portfolioLeftArrow.style.display = 'flex';
     
             clientX = portfolioTabs[portfolioTabs.length - 1].getBoundingClientRect().right - portfolioSlider.getBoundingClientRect().right;
@@ -85,10 +85,12 @@ const portfolioSlider = () => {
                 portfolioRightArrow.style.display = 'none';
             }
             
-        }else if(target.classList.contains('slider-arrow_left-portfolio')){
+        }else if(target.classList.contains('slider-arrow_left-portfolio') || target.classList.length === 0){
             let zeroPoint = portfolioTabs[0].style.transform.substr(-4);
     
             portfolioRightArrow.removeAttribute('style');
+
+            portfolioRightArrow.style.display = 'flex';
     
             if(zeroPoint === '(0%)'){
                 portfolioLeftArrow.removeAttribute('style');
