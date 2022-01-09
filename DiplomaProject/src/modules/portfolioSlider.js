@@ -75,13 +75,13 @@ const portfolioSlider = () => {
     portfolioSlider.addEventListener('click', (event) => {
         let target = event.target;
         let clientX;
-    
+
         if(target.classList.contains('slider-arrow_right-portfolio')){
             portfolioLeftArrow.style.display = 'flex';
     
             clientX = portfolioTabs[portfolioTabs.length - 1].getBoundingClientRect().right - portfolioSlider.getBoundingClientRect().right;
-    
-            if(clientX < 380){
+   
+            if(clientX <= 380){
                 portfolioRightArrow.style.display = 'none';
             }
             
